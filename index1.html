@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/74c0de9ea9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+    <nav>
+        <img src="logo.png" class="logo">
+        <ul>
+            <li><a href="#header"> Home</a></li>
+            <li><a href="#about"> About</a></li>
+            <li><a href="#"> Services</a></li>
+            <li><a href="#"> portfolio</a></li>
+            <li><a href="#contact"> Contact</a></li>
+
+        </ul>
+    </nav>
+    <div class="header-text">
+        <p>Full Stack Developer</p>
+        <h1>Hi, I'm <span>Rohit</span><br> Marathe From Dhule</h1>
+    </div>
+   </div>
+  </div>
+
+  <!---------------about--------->
+  <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+            <img src="Rohu.jpg" >
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>My name is Rohit marathe , and I have a background in Mechanical
+                    Engineering From Dr. Babasaheb Ambedkar Technological University, 
+                    Lonere. However I have recently developed a keen interest in the
+                    field of Full Stack Development Also, pursuing Full Stack Development
+                    Certification from Teknowell Edutech Chinchwad, Pune I am passionate
+                    about learning new technologies and I am eager to contribute my skills
+                    to exciting to exciting project. My Willingness to learn and adopt easily has
+                    been one of my strength. As a Mechanical Engineer I have gained knowledge
+                    in project management, problem-solving and critical thinking These skills
+                    will definitely help me in my journey towards becoming a successful Full 
+                    Stack Developer.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Front End skills:-</span><br>HTML5,CSS,javascript,rect,Bootstrap.</li>
+                            <li><span>Back End skills:-</span><br>C,C++,Core java,Adv java,MYSQL,AWT,Swing,JDBC,J2EE.</li>
+                            <li><span>Computer skills:-</span><br>Word, Excel,Powerpoint,MS-CIT.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Currently Fresher:-</span><br>Searching a job for reputed company.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2015-16</span><br>SSC From K.S.K. New City High School Dhule. <br>Percentage:- 69%</li>
+                            <li><span>2018</span><br>HSC From C.S. Bafna High and Jr College Fagne ,Dhule.<br>Percentage:- 63.38%</li>
+                            <li><span>2018-2022</span><br>B-Tech From SSVPS's COE Dhule,Maharashtra.<br>CGPA:- 8.38/10 </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-----contact------------------------->
+  <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left"> 
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>rohitmarathe2018@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>9766544271</p>
+                <div class="social-icons">
+                   <a href=""><i class="fa-brands fa-facebook"></i></a>
+                   <a href="https://instagram.com/rohit_rm_4547?igshid=NGVhN2U2NjQ0Yg=="><i class="fa-brands fa-square-instagram"></i></a>
+                   <a href="https://www.linkedin.com/in/rohit-marathe-871b58226"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="https://drive.google.com/file/d/1USTIIjA9_tYb3kES8pMAhWtztfpN4Zd5/view?usp=drive_link" download class="btn btn1">Donwload CV</a>
+            </div>
+            <div class="contact-right">
+               <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+               <button type="submit" class="btn btn2">Submit</button>
+               </form> 
+               <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright # Rohit. Made with <i class="fa-solid fa-heart"></i> by Easy Tutorials</p>
+    </div>
+
+  </div>
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname)
+    {
+        for(tablink of tablinks)
+        {
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents)
+        {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwjcuHhnyU_gm3l8FDSznvqhfkxNLFrHvm8dtJcJ_Dcc7NK4dS-UZ6jO2MkyOaSZ_d7/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Send Successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
+
